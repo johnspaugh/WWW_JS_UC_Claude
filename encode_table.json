@@ -13,30 +13,16 @@
     "status": "ready"
   },
   {
-    "id": "encode_1080p_20260220151037",
-    "asset_id": "asset_20260220151037",
-    "profile": "1080p",
-    "path": "./encoded_bucket\\test_video_transcoded_1080p.mp4",
-    "size": 45000000,
-    "created_at": "2026-02-20T15:10:37.568701",
-    "status": "ready"
-  },
-  {
-    "id": "encode_720p_20260220151037",
-    "asset_id": "asset_20260220151037",
-    "profile": "720p",
-    "path": "./encoded_bucket\\test_video_transcoded_720p.mp4",
-    "size": 22000000,
-    "created_at": "2026-02-20T15:10:37.568715",
-    "status": "ready"
-  },
-  {
-    "id": "encode_480p_20260220151037",
-    "asset_id": "asset_20260220151037",
-    "profile": "480p",
-    "path": "./encoded_bucket\\test_video_transcoded_480p.mp4",
-    "size": 10000000,
-    "created_at": "2026-02-20T15:10:37.568723",
+    "id": "encode_20260315162932",
+    "asset_id": "asset_20260315162932",
+    "model": "standard_web",
+    "path": "./encoded_bucket\\Testing6SecondVideo_standard_web.mp4",
+    "size": 38000000,
+    "duration": 120,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "resolution": "1920x1080",
+    "created_at": "2026-03-15T16:29:32.462849",
     "status": "ready"
   }
 ]

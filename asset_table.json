@@ -35,41 +35,11 @@
     "encoded_video_id": "encode_20260220150307"
   },
   {
-    "id": "asset_20260220150830",
-    "original_path": "./test_video.mp4",
-    "asset_path": "./asset_bucket\\test_video_transcoded.mp4",
-    "thumbnail_path": "./test_video_thumb.jpg",
-    "metadata": {
-      "duration": 120,
-      "resolution": "1920x1080",
-      "codec": "h264",
-      "fps": 30,
-      "bitrate": 5000
-    },
-    "ingested_at": "2026-02-20T15:08:30.846499",
-    "status": "active"
-  },
-  {
-    "id": "asset_20260220150953",
-    "original_path": "./test_video.mp4",
-    "asset_path": "./asset_bucket\\test_video_transcoded.mp4",
-    "thumbnail_path": "./test_video_thumb.jpg",
-    "metadata": {
-      "duration": 120,
-      "resolution": "1920x1080",
-      "codec": "h264",
-      "fps": 30,
-      "bitrate": 5000
-    },
-    "ingested_at": "2026-02-20T15:09:53.106485",
-    "status": "active"
-  },
-  {
-    "id": "asset_20260220151037",
-    "original_path": "./test_video.mp4",
-    "asset_path": "./asset_bucket\\test_video_transcoded.mp4",
-    "thumbnail_path": "./test_video_thumb.jpg",
-    "metadata": {
+    "id": "asset_20260315162658",
+    "original_path": "./Testing6SecondVideo.mp4",
+    "asset_path": "./asset_bucket\\Testing6SecondVideo.mp4",
+    "thumbnail_path": "./Testing6SecondVideo_thumb.jpg",
+    "inspection": {
       "duration": 120,
       "resolution": "1920x1080",
       "width": 1920,
@@ -78,31 +48,25 @@
       "fps": 30,
       "bitrate": 5000000,
       "audio_codec": "aac",
-      "audio_bitrate": 128000
+      "audio_bitrate": 128000,
+      "file_format": "mp4"
     },
-    "ingested_at": "2026-02-20T15:10:37.564303",
-    "status": "active",
-    "encoding_status": "completed",
-    "encoding_completed_at": "2026-02-20T15:10:37.570093",
-    "available_profiles": [
-      "1080p",
-      "720p",
-      "480p"
-    ]
-  },
-  {
-    "id": "asset_20260220162129",
-    "original_path": "./test_video.mp4",
-    "asset_path": "./asset_bucket\\test_video_transcoded.mp4",
-    "thumbnail_path": "./test_video_thumb.jpg",
-    "metadata": {
-      "duration": 120,
-      "resolution": "1920x1080",
-      "codec": "h264",
+    "encoding_model": {
+      "name": "standard_web",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "container": "mp4",
+      "width": 1920,
+      "height": 1080,
+      "video_bitrate": 4000000,
+      "audio_bitrate": 128000,
       "fps": 30,
-      "bitrate": 5000
+      "preset": "medium"
     },
-    "ingested_at": "2026-02-20T16:21:29.579348",
-    "status": "active"
+    "ingested_at": "2026-03-15T16:26:58.296661",
+    "status": "ingested",
+    "encoding_status": "completed",
+    "encoding_completed_at": "2026-03-15T16:26:58.307800",
+    "encoded_video_id": "encode_20260315162658"
   }
 ]

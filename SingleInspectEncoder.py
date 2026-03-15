@@ -497,9 +497,11 @@ if __name__ == "__main__":
     engine.add_dag(build_encode_dag())
     
     # Create a test video file
-    test_video_path = "./test_video.mp4"
-    with open(test_video_path, 'w') as f:
-        f.write("fake video content for testing")
+    test_video_path = "./Testing6SecondVideo.mp4"  #"./test_video.mp4"
+    if test_video_path == "./test_video.mp4":
+        #don't need write to if have an actual video already
+        with open(test_video_path, 'w') as f:
+            f.write("fake video content for testing")
     
     # STEP 1: Execute the video ingest workflow
     print("\n" + "🎬 "*30)
@@ -577,7 +579,10 @@ if __name__ == "__main__":
     finally:
         # Cleanup test file
         if os.path.exists(test_video_path):
-            os.remove(test_video_path)
+            if test_video_path == "./Testing6SecondVideo.mp4":
+                print("not delete my ./Testing6SecondVideo.mp4, otherwise will delete ever other video")
+            else:
+                os.remove(test_video_path)
         
         print("\n" + "="*60)
         print("Workflow execution complete")

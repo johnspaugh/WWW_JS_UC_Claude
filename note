@@ -1,0 +1,14 @@
+
+Project Goals 
+Simple Rules engine (RE).   
+1. Given input video, create rule/DAG for pre-ingest processes and upon success, 
+complete the ingest move to asset bucket, and add to asset table.. 
+2. Given successful ingest, use inspection details to create rule/DAG for transcoding, and 
+on successful encode, move output(s) to the encoded video bucket, and create record. 
+3. Create unit tests to verify the implementation. 
+Key Points: 
+● Initial version will only consider a single ingest inspection, 
+and a single model for encoding. 
+● The execution engine is not in the initial scope of this project for contractor.  
+Company will own that work. 
+● All table schemas will be jointly defined by contractor and company.
