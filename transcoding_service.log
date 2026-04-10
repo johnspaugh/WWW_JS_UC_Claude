@@ -1,0 +1,299 @@
+2026-04-10 09:30:29,654 - __main__ - INFO - Initializing Video Transcoding Service
+2026-04-10 09:30:55,827 - Rules_Engine - INFO - Added rule: premium_movie_abr (priority 1)
+2026-04-10 09:30:55,827 - Rules_Engine - INFO - Added rule: user_content_quick (priority 2)
+2026-04-10 09:30:55,828 - Rules_Engine - INFO - Added rule: legacy_codec_upgrade (priority 3)
+2026-04-10 09:30:55,828 - Rules_Engine - INFO - Added rule: tv_episode_standard (priority 4)
+2026-04-10 09:30:55,828 - Rules_Engine - INFO - Added rule: trailer_high_quality (priority 5)
+2026-04-10 09:30:55,828 - Rules_Engine - INFO - Encoding rules setup complete - 5 rules configured
+2026-04-10 09:30:55,829 - Orchestrator - INFO - Orchestrator initialized with all services
+2026-04-10 09:32:30,244 - __main__ - INFO - Found 0 video(s) in asset_bucket: []
+2026-04-10 09:42:23,915 - __main__ - INFO - Initializing Video Transcoding Service
+2026-04-10 09:42:23,925 - Rules_Engine - INFO - Added rule: premium_movie_abr (priority 1)
+2026-04-10 09:42:23,926 - Rules_Engine - INFO - Added rule: user_content_quick (priority 2)
+2026-04-10 09:42:23,926 - Rules_Engine - INFO - Added rule: legacy_codec_upgrade (priority 3)
+2026-04-10 09:42:23,926 - Rules_Engine - INFO - Added rule: tv_episode_standard (priority 4)
+2026-04-10 09:42:23,926 - Rules_Engine - INFO - Added rule: trailer_high_quality (priority 5)
+2026-04-10 09:42:23,926 - Rules_Engine - INFO - Encoding rules setup complete - 5 rules configured
+2026-04-10 09:42:23,926 - Orchestrator - INFO - Orchestrator initialized with all services
+2026-04-10 09:42:28,207 - __main__ - INFO - Found 0 video(s) in asset_bucket: []
+2026-04-10 09:48:09,636 - __main__ - INFO - Initializing Video Transcoding Service
+2026-04-10 09:48:09,639 - Rules_Engine - INFO - Added rule: premium_movie_abr (priority 1)
+2026-04-10 09:48:09,639 - Rules_Engine - INFO - Added rule: user_content_quick (priority 2)
+2026-04-10 09:48:09,640 - Rules_Engine - INFO - Added rule: legacy_codec_upgrade (priority 3)
+2026-04-10 09:48:09,640 - Rules_Engine - INFO - Added rule: tv_episode_standard (priority 4)
+2026-04-10 09:48:09,640 - Rules_Engine - INFO - Added rule: trailer_high_quality (priority 5)
+2026-04-10 09:48:09,640 - Rules_Engine - INFO - Encoding rules setup complete - 5 rules configured
+2026-04-10 09:48:09,640 - Orchestrator - INFO - Orchestrator initialized with all services
+2026-04-10 09:48:26,434 - __main__ - INFO - Found 5 video(s) in asset_bucket: ['demo_movie.mp4', 'Testing6SecondVideo.mp4', 'test_movie.mp4', 'test_trailer.mp4', 'test_user_content.mp4']
+2026-04-10 09:49:43,589 - Orchestrator - INFO - === STEP 1: INGEST ===
+2026-04-10 09:49:43,596 - Ingest_Service - INFO - asset.ingested - 472114e8-0df5-402f-af09-8fec72444773 from asset_bucket/demo_movie.mp4 as movie
+2026-04-10 09:49:43,596 - Ingest_Service - INFO - Working copy created: ./service/temp_bucket\demo_movie.mp4
+2026-04-10 09:49:43,596 - Orchestrator - INFO - === STEP 2: INSPECTION ===
+2026-04-10 09:49:43,598 - Inspection_Service - INFO - Starting inspection for asset 472114e8-0df5-402f-af09-8fec72444773
+2026-04-10 09:49:43,601 - Ingest_Service - INFO - Asset 472114e8-0df5-402f-af09-8fec72444773 status updated to inspected
+2026-04-10 09:49:43,601 - Inspection_Service - INFO - asset.inspected - 472114e8-0df5-402f-af09-8fec72444773: 1920x1080, 7200.0s
+2026-04-10 09:49:43,602 - Orchestrator - INFO - === STEP 3: RULES EVALUATION ===
+2026-04-10 09:49:43,603 - Rules_Engine - INFO - Rule matched: premium_movie_abr for asset 472114e8-0df5-402f-af09-8fec72444773
+2026-04-10 09:49:43,603 - Rules_Engine - INFO - dag.created - 3113e326-d374-43d7-bd1f-d5047555483b with 4 tasks for rule premium_movie_abr
+2026-04-10 09:49:43,607 - Ingest_Service - INFO - Asset 472114e8-0df5-402f-af09-8fec72444773 status updated to encoding
+2026-04-10 09:49:43,607 - Orchestrator - INFO - === STEP 4: ENCODING ===
+2026-04-10 09:49:43,608 - Encoding_Service - INFO - Starting DAG execution: 3113e326-d374-43d7-bd1f-d5047555483b for asset 472114e8-0df5-402f-af09-8fec72444773
+2026-04-10 09:49:43,609 - Encoding_Service - INFO - task.started - h264_1080p_472114e8
+2026-04-10 09:49:43,609 - Encoding_Service - INFO - Encoding parameters for h264_1080p_472114e8:
+2026-04-10 09:49:43,609 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\demo_movie.mp4
+2026-04-10 09:49:43,610 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:49:43,610 - Encoding_Service - INFO -   Resolution: 1920x1080
+2026-04-10 09:49:43,610 - Encoding_Service - INFO -   Bitrate: 5000000 bps
+2026-04-10 09:49:43,610 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:49:43,611 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\472114e8_h264_1920x1080_medium.mp4
+2026-04-10 09:49:43,612 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\demo_movie.mp4 -> ./service/encoded_bucket\472114e8_h264_1920x1080_medium.mp4
+2026-04-10 09:49:43,613 - Encoding_Service - INFO - Simulated encoding complete - would be ~67.5MB
+2026-04-10 09:49:43,614 - Encoding_Service - INFO - task.completed - h264_1080p_472114e8: ./service/encoded_bucket\472114e8_h264_1920x1080_medium.mp4
+2026-04-10 09:49:43,614 - Encoding_Service - INFO - Task completed: h264_1080p_472114e8
+2026-04-10 09:49:43,614 - Encoding_Service - INFO - task.started - h264_720p_472114e8
+2026-04-10 09:49:43,615 - Encoding_Service - INFO - Encoding parameters for h264_720p_472114e8:
+2026-04-10 09:49:43,615 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\demo_movie.mp4
+2026-04-10 09:49:43,615 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:49:43,615 - Encoding_Service - INFO -   Resolution: 1280x720
+2026-04-10 09:49:43,616 - Encoding_Service - INFO -   Bitrate: 3000000 bps
+2026-04-10 09:49:43,616 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:49:43,616 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\472114e8_h264_1280x720_medium.mp4
+2026-04-10 09:49:43,617 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\demo_movie.mp4 -> ./service/encoded_bucket\472114e8_h264_1280x720_medium.mp4
+2026-04-10 09:49:43,618 - Encoding_Service - INFO - Simulated encoding complete - would be ~40.5MB
+2026-04-10 09:49:43,619 - Encoding_Service - INFO - task.completed - h264_720p_472114e8: ./service/encoded_bucket\472114e8_h264_1280x720_medium.mp4
+2026-04-10 09:49:43,619 - Encoding_Service - INFO - Task completed: h264_720p_472114e8
+2026-04-10 09:49:43,619 - Encoding_Service - INFO - task.started - h264_480p_472114e8
+2026-04-10 09:49:43,620 - Encoding_Service - INFO - Encoding parameters for h264_480p_472114e8:
+2026-04-10 09:49:43,620 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\demo_movie.mp4
+2026-04-10 09:49:43,620 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:49:43,621 - Encoding_Service - INFO -   Resolution: 854x480
+2026-04-10 09:49:43,621 - Encoding_Service - INFO -   Bitrate: 1500000 bps
+2026-04-10 09:49:43,621 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:49:43,622 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\472114e8_h264_854x480_medium.mp4
+2026-04-10 09:49:43,622 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\demo_movie.mp4 -> ./service/encoded_bucket\472114e8_h264_854x480_medium.mp4
+2026-04-10 09:49:43,623 - Encoding_Service - INFO - Simulated encoding complete - would be ~20.2MB
+2026-04-10 09:49:43,623 - Encoding_Service - INFO - task.completed - h264_480p_472114e8: ./service/encoded_bucket\472114e8_h264_854x480_medium.mp4
+2026-04-10 09:49:43,624 - Encoding_Service - INFO - Task completed: h264_480p_472114e8
+2026-04-10 09:49:43,624 - Encoding_Service - INFO - task.started - h265_1080p_472114e8
+2026-04-10 09:49:43,624 - Encoding_Service - INFO - Encoding parameters for h265_1080p_472114e8:
+2026-04-10 09:49:43,624 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\demo_movie.mp4
+2026-04-10 09:49:43,626 - Encoding_Service - INFO -   Codec: h265
+2026-04-10 09:49:43,626 - Encoding_Service - INFO -   Resolution: 1920x1080
+2026-04-10 09:49:43,627 - Encoding_Service - INFO -   Bitrate: 3500000 bps
+2026-04-10 09:49:43,627 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:49:43,628 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\472114e8_h265_1920x1080_medium.mp4
+2026-04-10 09:49:43,629 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\demo_movie.mp4 -> ./service/encoded_bucket\472114e8_h265_1920x1080_medium.mp4
+2026-04-10 09:49:43,630 - Encoding_Service - INFO - Simulated encoding complete - would be ~47.2MB
+2026-04-10 09:49:43,631 - Encoding_Service - INFO - task.completed - h265_1080p_472114e8: ./service/encoded_bucket\472114e8_h265_1920x1080_medium.mp4
+2026-04-10 09:49:43,631 - Encoding_Service - INFO - Task completed: h265_1080p_472114e8
+2026-04-10 09:49:43,633 - Encoding_Service - INFO - temp.cleaned - removed working copy: ./service/temp_bucket\demo_movie.mp4
+2026-04-10 09:49:43,633 - Encoding_Service - INFO - DAG execution complete: 3113e326-d374-43d7-bd1f-d5047555483b - 4 outputs
+2026-04-10 09:49:43,635 - Ingest_Service - INFO - Asset 472114e8-0df5-402f-af09-8fec72444773 status updated to completed
+2026-04-10 09:51:20,967 - Orchestrator - INFO - === STEP 1: INGEST ===
+2026-04-10 09:51:20,988 - Ingest_Service - INFO - asset.ingested - bb1d2d59-b64a-4688-af16-3693c006a2f1 from asset_bucket/Testing6SecondVideo.mp4 as movie
+2026-04-10 09:51:20,988 - Ingest_Service - INFO - Working copy created: ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-04-10 09:51:20,989 - Orchestrator - INFO - === STEP 2: INSPECTION ===
+2026-04-10 09:51:20,990 - Inspection_Service - INFO - Starting inspection for asset bb1d2d59-b64a-4688-af16-3693c006a2f1
+2026-04-10 09:51:20,992 - Ingest_Service - INFO - Asset bb1d2d59-b64a-4688-af16-3693c006a2f1 status updated to inspected
+2026-04-10 09:51:20,992 - Inspection_Service - INFO - asset.inspected - bb1d2d59-b64a-4688-af16-3693c006a2f1: 1920x1080, 7200.0s
+2026-04-10 09:51:20,993 - Orchestrator - INFO - === STEP 3: RULES EVALUATION ===
+2026-04-10 09:51:20,993 - Rules_Engine - INFO - Rule matched: premium_movie_abr for asset bb1d2d59-b64a-4688-af16-3693c006a2f1
+2026-04-10 09:51:20,994 - Rules_Engine - INFO - dag.created - 9bb9396f-cd84-4e93-bd2d-a155a9b918dd with 4 tasks for rule premium_movie_abr
+2026-04-10 09:51:20,996 - Ingest_Service - INFO - Asset bb1d2d59-b64a-4688-af16-3693c006a2f1 status updated to encoding
+2026-04-10 09:51:20,997 - Orchestrator - INFO - === STEP 4: ENCODING ===
+2026-04-10 09:51:20,998 - Encoding_Service - INFO - Starting DAG execution: 9bb9396f-cd84-4e93-bd2d-a155a9b918dd for asset bb1d2d59-b64a-4688-af16-3693c006a2f1
+2026-04-10 09:51:20,999 - Encoding_Service - INFO - task.started - h264_1080p_bb1d2d59
+2026-04-10 09:51:20,999 - Encoding_Service - INFO - Encoding parameters for h264_1080p_bb1d2d59:
+2026-04-10 09:51:21,000 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-04-10 09:51:21,000 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:51:21,000 - Encoding_Service - INFO -   Resolution: 1920x1080
+2026-04-10 09:51:21,001 - Encoding_Service - INFO -   Bitrate: 5000000 bps
+2026-04-10 09:51:21,001 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:51:21,001 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\bb1d2d59_h264_1920x1080_medium.mp4
+2026-04-10 09:51:21,002 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\Testing6SecondVideo.mp4 -> ./service/encoded_bucket\bb1d2d59_h264_1920x1080_medium.mp4
+2026-04-10 09:51:21,003 - Encoding_Service - INFO - Simulated encoding complete - would be ~67.5MB
+2026-04-10 09:51:21,003 - Encoding_Service - INFO - task.completed - h264_1080p_bb1d2d59: ./service/encoded_bucket\bb1d2d59_h264_1920x1080_medium.mp4
+2026-04-10 09:51:21,004 - Encoding_Service - INFO - Task completed: h264_1080p_bb1d2d59
+2026-04-10 09:51:21,005 - Encoding_Service - INFO - task.started - h264_720p_bb1d2d59
+2026-04-10 09:51:21,005 - Encoding_Service - INFO - Encoding parameters for h264_720p_bb1d2d59:
+2026-04-10 09:51:21,005 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-04-10 09:51:21,006 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:51:21,006 - Encoding_Service - INFO -   Resolution: 1280x720
+2026-04-10 09:51:21,006 - Encoding_Service - INFO -   Bitrate: 3000000 bps
+2026-04-10 09:51:21,006 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:51:21,007 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\bb1d2d59_h264_1280x720_medium.mp4
+2026-04-10 09:51:21,007 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\Testing6SecondVideo.mp4 -> ./service/encoded_bucket\bb1d2d59_h264_1280x720_medium.mp4
+2026-04-10 09:51:21,008 - Encoding_Service - INFO - Simulated encoding complete - would be ~40.5MB
+2026-04-10 09:51:21,009 - Encoding_Service - INFO - task.completed - h264_720p_bb1d2d59: ./service/encoded_bucket\bb1d2d59_h264_1280x720_medium.mp4
+2026-04-10 09:51:21,009 - Encoding_Service - INFO - Task completed: h264_720p_bb1d2d59
+2026-04-10 09:51:21,010 - Encoding_Service - INFO - task.started - h264_480p_bb1d2d59
+2026-04-10 09:51:21,010 - Encoding_Service - INFO - Encoding parameters for h264_480p_bb1d2d59:
+2026-04-10 09:51:21,010 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-04-10 09:51:21,011 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:51:21,011 - Encoding_Service - INFO -   Resolution: 854x480
+2026-04-10 09:51:21,013 - Encoding_Service - INFO -   Bitrate: 1500000 bps
+2026-04-10 09:51:21,013 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:51:21,014 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\bb1d2d59_h264_854x480_medium.mp4
+2026-04-10 09:51:21,014 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\Testing6SecondVideo.mp4 -> ./service/encoded_bucket\bb1d2d59_h264_854x480_medium.mp4
+2026-04-10 09:51:21,017 - Encoding_Service - INFO - Simulated encoding complete - would be ~20.2MB
+2026-04-10 09:51:21,017 - Encoding_Service - INFO - task.completed - h264_480p_bb1d2d59: ./service/encoded_bucket\bb1d2d59_h264_854x480_medium.mp4
+2026-04-10 09:51:21,018 - Encoding_Service - INFO - Task completed: h264_480p_bb1d2d59
+2026-04-10 09:51:21,020 - Encoding_Service - INFO - task.started - h265_1080p_bb1d2d59
+2026-04-10 09:51:21,021 - Encoding_Service - INFO - Encoding parameters for h265_1080p_bb1d2d59:
+2026-04-10 09:51:21,022 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-04-10 09:51:21,022 - Encoding_Service - INFO -   Codec: h265
+2026-04-10 09:51:21,023 - Encoding_Service - INFO -   Resolution: 1920x1080
+2026-04-10 09:51:21,023 - Encoding_Service - INFO -   Bitrate: 3500000 bps
+2026-04-10 09:51:21,024 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:51:21,024 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\bb1d2d59_h265_1920x1080_medium.mp4
+2026-04-10 09:51:21,025 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\Testing6SecondVideo.mp4 -> ./service/encoded_bucket\bb1d2d59_h265_1920x1080_medium.mp4
+2026-04-10 09:51:21,026 - Encoding_Service - INFO - Simulated encoding complete - would be ~47.2MB
+2026-04-10 09:51:21,027 - Encoding_Service - INFO - task.completed - h265_1080p_bb1d2d59: ./service/encoded_bucket\bb1d2d59_h265_1920x1080_medium.mp4
+2026-04-10 09:51:21,027 - Encoding_Service - INFO - Task completed: h265_1080p_bb1d2d59
+2026-04-10 09:51:21,030 - Encoding_Service - INFO - temp.cleaned - removed working copy: ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-04-10 09:51:21,030 - Encoding_Service - INFO - DAG execution complete: 9bb9396f-cd84-4e93-bd2d-a155a9b918dd - 4 outputs
+2026-04-10 09:51:21,034 - Ingest_Service - INFO - Asset bb1d2d59-b64a-4688-af16-3693c006a2f1 status updated to completed
+2026-04-10 09:52:19,490 - Orchestrator - INFO - === STEP 1: INGEST ===
+2026-04-10 09:52:19,494 - Ingest_Service - INFO - asset.ingested - e1146584-b7fc-4bf1-af40-3775fc380a17 from asset_bucket/test_movie.mp4 as movie
+2026-04-10 09:52:19,494 - Ingest_Service - INFO - Working copy created: ./service/temp_bucket\test_movie.mp4
+2026-04-10 09:52:19,494 - Orchestrator - INFO - === STEP 2: INSPECTION ===
+2026-04-10 09:52:19,495 - Inspection_Service - INFO - Starting inspection for asset e1146584-b7fc-4bf1-af40-3775fc380a17
+2026-04-10 09:52:19,498 - Ingest_Service - INFO - Asset e1146584-b7fc-4bf1-af40-3775fc380a17 status updated to inspected
+2026-04-10 09:52:19,498 - Inspection_Service - INFO - asset.inspected - e1146584-b7fc-4bf1-af40-3775fc380a17: 1920x1080, 7200.0s
+2026-04-10 09:52:19,498 - Orchestrator - INFO - === STEP 3: RULES EVALUATION ===
+2026-04-10 09:52:19,499 - Rules_Engine - INFO - Rule matched: premium_movie_abr for asset e1146584-b7fc-4bf1-af40-3775fc380a17
+2026-04-10 09:52:19,499 - Rules_Engine - INFO - dag.created - 103f1c09-f189-4e5f-9877-1a279ebfa0ab with 4 tasks for rule premium_movie_abr
+2026-04-10 09:52:19,501 - Ingest_Service - INFO - Asset e1146584-b7fc-4bf1-af40-3775fc380a17 status updated to encoding
+2026-04-10 09:52:19,502 - Orchestrator - INFO - === STEP 4: ENCODING ===
+2026-04-10 09:52:19,504 - Encoding_Service - INFO - Starting DAG execution: 103f1c09-f189-4e5f-9877-1a279ebfa0ab for asset e1146584-b7fc-4bf1-af40-3775fc380a17
+2026-04-10 09:52:19,505 - Encoding_Service - INFO - task.started - h264_1080p_e1146584
+2026-04-10 09:52:19,505 - Encoding_Service - INFO - Encoding parameters for h264_1080p_e1146584:
+2026-04-10 09:52:19,506 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\test_movie.mp4
+2026-04-10 09:52:19,506 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:52:19,506 - Encoding_Service - INFO -   Resolution: 1920x1080
+2026-04-10 09:52:19,507 - Encoding_Service - INFO -   Bitrate: 5000000 bps
+2026-04-10 09:52:19,507 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:52:19,507 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\e1146584_h264_1920x1080_medium.mp4
+2026-04-10 09:52:19,507 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\test_movie.mp4 -> ./service/encoded_bucket\e1146584_h264_1920x1080_medium.mp4
+2026-04-10 09:52:19,509 - Encoding_Service - INFO - Simulated encoding complete - would be ~67.5MB
+2026-04-10 09:52:19,509 - Encoding_Service - INFO - task.completed - h264_1080p_e1146584: ./service/encoded_bucket\e1146584_h264_1920x1080_medium.mp4
+2026-04-10 09:52:19,509 - Encoding_Service - INFO - Task completed: h264_1080p_e1146584
+2026-04-10 09:52:19,510 - Encoding_Service - INFO - task.started - h264_720p_e1146584
+2026-04-10 09:52:19,510 - Encoding_Service - INFO - Encoding parameters for h264_720p_e1146584:
+2026-04-10 09:52:19,511 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\test_movie.mp4
+2026-04-10 09:52:19,511 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:52:19,511 - Encoding_Service - INFO -   Resolution: 1280x720
+2026-04-10 09:52:19,512 - Encoding_Service - INFO -   Bitrate: 3000000 bps
+2026-04-10 09:52:19,512 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:52:19,512 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\e1146584_h264_1280x720_medium.mp4
+2026-04-10 09:52:19,513 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\test_movie.mp4 -> ./service/encoded_bucket\e1146584_h264_1280x720_medium.mp4
+2026-04-10 09:52:19,515 - Encoding_Service - INFO - Simulated encoding complete - would be ~40.5MB
+2026-04-10 09:52:19,515 - Encoding_Service - INFO - task.completed - h264_720p_e1146584: ./service/encoded_bucket\e1146584_h264_1280x720_medium.mp4
+2026-04-10 09:52:19,516 - Encoding_Service - INFO - Task completed: h264_720p_e1146584
+2026-04-10 09:52:19,520 - Encoding_Service - INFO - task.started - h264_480p_e1146584
+2026-04-10 09:52:19,521 - Encoding_Service - INFO - Encoding parameters for h264_480p_e1146584:
+2026-04-10 09:52:19,521 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\test_movie.mp4
+2026-04-10 09:52:19,522 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:52:19,522 - Encoding_Service - INFO -   Resolution: 854x480
+2026-04-10 09:52:19,522 - Encoding_Service - INFO -   Bitrate: 1500000 bps
+2026-04-10 09:52:19,523 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:52:19,523 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\e1146584_h264_854x480_medium.mp4
+2026-04-10 09:52:19,524 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\test_movie.mp4 -> ./service/encoded_bucket\e1146584_h264_854x480_medium.mp4
+2026-04-10 09:52:19,525 - Encoding_Service - INFO - Simulated encoding complete - would be ~20.2MB
+2026-04-10 09:52:19,525 - Encoding_Service - INFO - task.completed - h264_480p_e1146584: ./service/encoded_bucket\e1146584_h264_854x480_medium.mp4
+2026-04-10 09:52:19,526 - Encoding_Service - INFO - Task completed: h264_480p_e1146584
+2026-04-10 09:52:19,526 - Encoding_Service - INFO - task.started - h265_1080p_e1146584
+2026-04-10 09:52:19,526 - Encoding_Service - INFO - Encoding parameters for h265_1080p_e1146584:
+2026-04-10 09:52:19,527 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\test_movie.mp4
+2026-04-10 09:52:19,527 - Encoding_Service - INFO -   Codec: h265
+2026-04-10 09:52:19,527 - Encoding_Service - INFO -   Resolution: 1920x1080
+2026-04-10 09:52:19,527 - Encoding_Service - INFO -   Bitrate: 3500000 bps
+2026-04-10 09:52:19,528 - Encoding_Service - INFO -   Preset: medium
+2026-04-10 09:52:19,528 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\e1146584_h265_1920x1080_medium.mp4
+2026-04-10 09:52:19,528 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\test_movie.mp4 -> ./service/encoded_bucket\e1146584_h265_1920x1080_medium.mp4
+2026-04-10 09:52:19,530 - Encoding_Service - INFO - Simulated encoding complete - would be ~47.2MB
+2026-04-10 09:52:19,534 - Encoding_Service - INFO - task.completed - h265_1080p_e1146584: ./service/encoded_bucket\e1146584_h265_1920x1080_medium.mp4
+2026-04-10 09:52:19,535 - Encoding_Service - INFO - Task completed: h265_1080p_e1146584
+2026-04-10 09:52:19,535 - Encoding_Service - INFO - temp.cleaned - removed working copy: ./service/temp_bucket\test_movie.mp4
+2026-04-10 09:52:19,536 - Encoding_Service - INFO - DAG execution complete: 103f1c09-f189-4e5f-9877-1a279ebfa0ab - 4 outputs
+2026-04-10 09:52:19,540 - Ingest_Service - INFO - Asset e1146584-b7fc-4bf1-af40-3775fc380a17 status updated to completed
+2026-04-10 09:52:43,346 - Orchestrator - INFO - === STEP 1: INGEST ===
+2026-04-10 09:52:43,350 - Ingest_Service - INFO - asset.ingested - 7bf6fcc2-1528-41f9-b1f9-baffb7efe591 from asset_bucket/test_trailer.mp4 as trailer
+2026-04-10 09:52:43,350 - Ingest_Service - INFO - Working copy created: ./service/temp_bucket\test_trailer.mp4
+2026-04-10 09:52:43,350 - Orchestrator - INFO - === STEP 2: INSPECTION ===
+2026-04-10 09:52:43,351 - Inspection_Service - INFO - Starting inspection for asset 7bf6fcc2-1528-41f9-b1f9-baffb7efe591
+2026-04-10 09:52:43,354 - Ingest_Service - INFO - Asset 7bf6fcc2-1528-41f9-b1f9-baffb7efe591 status updated to inspected
+2026-04-10 09:52:43,354 - Inspection_Service - INFO - asset.inspected - 7bf6fcc2-1528-41f9-b1f9-baffb7efe591: 1920x1080, 150.0s
+2026-04-10 09:52:43,354 - Orchestrator - INFO - === STEP 3: RULES EVALUATION ===
+2026-04-10 09:52:43,355 - Rules_Engine - INFO - Rule matched: trailer_high_quality for asset 7bf6fcc2-1528-41f9-b1f9-baffb7efe591
+2026-04-10 09:52:43,355 - Rules_Engine - INFO - dag.created - 552abece-4bad-40a9-acbf-68590be04b78 with 2 tasks for rule trailer_high_quality
+2026-04-10 09:52:43,358 - Ingest_Service - INFO - Asset 7bf6fcc2-1528-41f9-b1f9-baffb7efe591 status updated to encoding
+2026-04-10 09:52:43,358 - Orchestrator - INFO - === STEP 4: ENCODING ===
+2026-04-10 09:52:43,358 - Encoding_Service - INFO - Starting DAG execution: 552abece-4bad-40a9-acbf-68590be04b78 for asset 7bf6fcc2-1528-41f9-b1f9-baffb7efe591
+2026-04-10 09:52:43,359 - Encoding_Service - INFO - task.started - h264_1080p_hq_7bf6fcc2
+2026-04-10 09:52:43,359 - Encoding_Service - INFO - Encoding parameters for h264_1080p_hq_7bf6fcc2:
+2026-04-10 09:52:43,360 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\test_trailer.mp4
+2026-04-10 09:52:43,360 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:52:43,360 - Encoding_Service - INFO -   Resolution: 1920x1080
+2026-04-10 09:52:43,360 - Encoding_Service - INFO -   Bitrate: 8000000 bps
+2026-04-10 09:52:43,360 - Encoding_Service - INFO -   Preset: slow
+2026-04-10 09:52:43,361 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\7bf6fcc2_h264_1920x1080_slow.mp4
+2026-04-10 09:52:43,361 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\test_trailer.mp4 -> ./service/encoded_bucket\7bf6fcc2_h264_1920x1080_slow.mp4
+2026-04-10 09:52:43,362 - Encoding_Service - INFO - Simulated encoding complete - would be ~108.0MB
+2026-04-10 09:52:43,362 - Encoding_Service - INFO - task.completed - h264_1080p_hq_7bf6fcc2: ./service/encoded_bucket\7bf6fcc2_h264_1920x1080_slow.mp4
+2026-04-10 09:52:43,362 - Encoding_Service - INFO - Task completed: h264_1080p_hq_7bf6fcc2
+2026-04-10 09:52:43,363 - Encoding_Service - INFO - task.started - h264_720p_hq_7bf6fcc2
+2026-04-10 09:52:43,363 - Encoding_Service - INFO - Encoding parameters for h264_720p_hq_7bf6fcc2:
+2026-04-10 09:52:43,364 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\test_trailer.mp4
+2026-04-10 09:52:43,364 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:52:43,364 - Encoding_Service - INFO -   Resolution: 1280x720
+2026-04-10 09:52:43,365 - Encoding_Service - INFO -   Bitrate: 5000000 bps
+2026-04-10 09:52:43,365 - Encoding_Service - INFO -   Preset: slow
+2026-04-10 09:52:43,365 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\7bf6fcc2_h264_1280x720_slow.mp4
+2026-04-10 09:52:43,366 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\test_trailer.mp4 -> ./service/encoded_bucket\7bf6fcc2_h264_1280x720_slow.mp4
+2026-04-10 09:52:43,367 - Encoding_Service - INFO - Simulated encoding complete - would be ~67.5MB
+2026-04-10 09:52:43,368 - Encoding_Service - INFO - task.completed - h264_720p_hq_7bf6fcc2: ./service/encoded_bucket\7bf6fcc2_h264_1280x720_slow.mp4
+2026-04-10 09:52:43,368 - Encoding_Service - INFO - Task completed: h264_720p_hq_7bf6fcc2
+2026-04-10 09:52:43,369 - Encoding_Service - INFO - temp.cleaned - removed working copy: ./service/temp_bucket\test_trailer.mp4
+2026-04-10 09:52:43,369 - Encoding_Service - INFO - DAG execution complete: 552abece-4bad-40a9-acbf-68590be04b78 - 2 outputs
+2026-04-10 09:52:43,372 - Ingest_Service - INFO - Asset 7bf6fcc2-1528-41f9-b1f9-baffb7efe591 status updated to completed
+2026-04-10 09:53:14,984 - Orchestrator - INFO - === STEP 1: INGEST ===
+2026-04-10 09:53:14,987 - Ingest_Service - INFO - asset.ingested - ef7260ea-e08c-4eac-8954-756af04f7c92 from asset_bucket/test_user_content.mp4 as user-content
+2026-04-10 09:53:14,988 - Ingest_Service - INFO - Working copy created: ./service/temp_bucket\test_user_content.mp4
+2026-04-10 09:53:14,988 - Orchestrator - INFO - === STEP 2: INSPECTION ===
+2026-04-10 09:53:14,989 - Inspection_Service - INFO - Starting inspection for asset ef7260ea-e08c-4eac-8954-756af04f7c92
+2026-04-10 09:53:14,993 - Ingest_Service - INFO - Asset ef7260ea-e08c-4eac-8954-756af04f7c92 status updated to inspected
+2026-04-10 09:53:14,993 - Inspection_Service - INFO - asset.inspected - ef7260ea-e08c-4eac-8954-756af04f7c92: 1280x720, 300.0s
+2026-04-10 09:53:14,993 - Orchestrator - INFO - === STEP 3: RULES EVALUATION ===
+2026-04-10 09:53:14,994 - Rules_Engine - INFO - Rule matched: user_content_quick for asset ef7260ea-e08c-4eac-8954-756af04f7c92
+2026-04-10 09:53:14,995 - Rules_Engine - INFO - dag.created - 8997bd77-866a-451e-adad-748e1704a222 with 2 tasks for rule user_content_quick
+2026-04-10 09:53:14,997 - Ingest_Service - INFO - Asset ef7260ea-e08c-4eac-8954-756af04f7c92 status updated to encoding
+2026-04-10 09:53:14,998 - Orchestrator - INFO - === STEP 4: ENCODING ===
+2026-04-10 09:53:14,998 - Encoding_Service - INFO - Starting DAG execution: 8997bd77-866a-451e-adad-748e1704a222 for asset ef7260ea-e08c-4eac-8954-756af04f7c92
+2026-04-10 09:53:14,999 - Encoding_Service - INFO - task.started - h264_720p_fast_ef7260ea
+2026-04-10 09:53:14,999 - Encoding_Service - INFO - Encoding parameters for h264_720p_fast_ef7260ea:
+2026-04-10 09:53:14,999 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\test_user_content.mp4
+2026-04-10 09:53:14,999 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:53:14,999 - Encoding_Service - INFO -   Resolution: 1280x720
+2026-04-10 09:53:15,000 - Encoding_Service - INFO -   Bitrate: 2500000 bps
+2026-04-10 09:53:15,000 - Encoding_Service - INFO -   Preset: fast
+2026-04-10 09:53:15,000 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\ef7260ea_h264_1280x720_fast.mp4
+2026-04-10 09:53:15,000 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\test_user_content.mp4 -> ./service/encoded_bucket\ef7260ea_h264_1280x720_fast.mp4
+2026-04-10 09:53:15,002 - Encoding_Service - INFO - Simulated encoding complete - would be ~33.8MB
+2026-04-10 09:53:15,004 - Encoding_Service - INFO - task.completed - h264_720p_fast_ef7260ea: ./service/encoded_bucket\ef7260ea_h264_1280x720_fast.mp4
+2026-04-10 09:53:15,005 - Encoding_Service - INFO - Task completed: h264_720p_fast_ef7260ea
+2026-04-10 09:53:15,005 - Encoding_Service - INFO - task.started - h264_480p_fast_ef7260ea
+2026-04-10 09:53:15,006 - Encoding_Service - INFO - Encoding parameters for h264_480p_fast_ef7260ea:
+2026-04-10 09:53:15,006 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\test_user_content.mp4
+2026-04-10 09:53:15,006 - Encoding_Service - INFO -   Codec: h264
+2026-04-10 09:53:15,006 - Encoding_Service - INFO -   Resolution: 854x480
+2026-04-10 09:53:15,007 - Encoding_Service - INFO -   Bitrate: 1200000 bps
+2026-04-10 09:53:15,007 - Encoding_Service - INFO -   Preset: fast
+2026-04-10 09:53:15,007 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\ef7260ea_h264_854x480_fast.mp4
+2026-04-10 09:53:15,007 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\test_user_content.mp4 -> ./service/encoded_bucket\ef7260ea_h264_854x480_fast.mp4
+2026-04-10 09:53:15,009 - Encoding_Service - INFO - Simulated encoding complete - would be ~16.2MB
+2026-04-10 09:53:15,010 - Encoding_Service - INFO - task.completed - h264_480p_fast_ef7260ea: ./service/encoded_bucket\ef7260ea_h264_854x480_fast.mp4
+2026-04-10 09:53:15,010 - Encoding_Service - INFO - Task completed: h264_480p_fast_ef7260ea
+2026-04-10 09:53:15,011 - Encoding_Service - INFO - temp.cleaned - removed working copy: ./service/temp_bucket\test_user_content.mp4
+2026-04-10 09:53:15,012 - Encoding_Service - INFO - DAG execution complete: 8997bd77-866a-451e-adad-748e1704a222 - 2 outputs
+2026-04-10 09:53:15,014 - Ingest_Service - INFO - Asset ef7260ea-e08c-4eac-8954-756af04f7c92 status updated to completed

@@ -74,9 +74,13 @@ def main():
     print(" VIDEO TRANSCODING SERVICE - MODULAR ARCHITECTURE ")
     print("="*72 + "\n")
 
-    asset_bucket = './asset_bucket'
-    temp_bucket = './temp_bucket'
-    encoded_bucket = './encoded_bucket'
+    # asset_bucket = './asset_bucket'
+    # temp_bucket = './temp_bucket'
+    # encoded_bucket = './encoded_bucket'
+    # because of the path way, need below code to insure working with the buckets in service folder
+    asset_bucket = './service/asset_bucket'
+    temp_bucket = './service/temp_bucket'
+    encoded_bucket = './service/encoded_bucket'
 
     try:
         # Initialize orchestrator
@@ -101,6 +105,14 @@ def main():
 
         # Find videos already in asset_bucket
         available_videos = get_videos_from_asset_bucket(asset_bucket)
+
+        # Debugging code: List files in asset_bucket, and check if path is correct
+        # print(asset_bucket)
+        # for f in os.listdir(asset_bucket):
+        #     if f.lower().endswith(".mp4"):
+        #         print(f"Found video file: {f}")
+        # print(os.getcwd())
+        # print(os.listdir(asset_bucket))
 
         if not available_videos:
             print(f"No .mp4 files found in {asset_bucket}/")
