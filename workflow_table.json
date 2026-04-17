@@ -1,0 +1,261 @@
+{
+  "f044ccf5-8639-44c8-aaff-e3cf2a5e523e": {
+    "dag_id": "f044ccf5-8639-44c8-aaff-e3cf2a5e523e",
+    "asset_uuid": "1f91003b-1349-47fc-ab3e-dc677c89d893",
+    "status": "pending",
+    "task_count": 4,
+    "tasks": [
+      {
+        "task_id": "h264_1080p_1f91003b",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "bitrate": 5000000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      },
+      {
+        "task_id": "h264_720p_1f91003b",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 1280,
+          "height": 720,
+          "bitrate": 3000000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      },
+      {
+        "task_id": "h264_480p_1f91003b",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 854,
+          "height": 480,
+          "bitrate": 1500000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      },
+      {
+        "task_id": "h265_1080p_1f91003b",
+        "dependencies": [
+          "h264_1080p_1f91003b"
+        ],
+        "encoding_params": {
+          "codec": "h265",
+          "width": 1920,
+          "height": 1080,
+          "bitrate": 3500000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      }
+    ],
+    "created_at": "2026-04-17T10:41:33.562910"
+  },
+  "dbd1930c-83fb-4c7e-b69d-bf5a4e77363f": {
+    "dag_id": "dbd1930c-83fb-4c7e-b69d-bf5a4e77363f",
+    "asset_uuid": "9324eb40-d4b6-444e-83d4-212489e461f6",
+    "status": "pending",
+    "task_count": 4,
+    "tasks": [
+      {
+        "task_id": "h264_1080p_9324eb40",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "bitrate": 5000000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      },
+      {
+        "task_id": "h264_720p_9324eb40",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 1280,
+          "height": 720,
+          "bitrate": 3000000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      },
+      {
+        "task_id": "h264_480p_9324eb40",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 854,
+          "height": 480,
+          "bitrate": 1500000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      },
+      {
+        "task_id": "h265_1080p_9324eb40",
+        "dependencies": [
+          "h264_1080p_9324eb40"
+        ],
+        "encoding_params": {
+          "codec": "h265",
+          "width": 1920,
+          "height": 1080,
+          "bitrate": 3500000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      }
+    ],
+    "created_at": "2026-04-17T10:47:48.393920"
+  },
+  "a1de4d0e-39c9-4f2a-a35b-9ea8ede03921": {
+    "dag_id": "a1de4d0e-39c9-4f2a-a35b-9ea8ede03921",
+    "asset_uuid": "6fbdc490-29e2-47a4-9cd1-4ee059b23fb4",
+    "status": "pending",
+    "task_count": 4,
+    "tasks": [
+      {
+        "task_id": "h264_1080p_6fbdc490",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "bitrate": 5000000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      },
+      {
+        "task_id": "h264_720p_6fbdc490",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 1280,
+          "height": 720,
+          "bitrate": 3000000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      },
+      {
+        "task_id": "h264_480p_6fbdc490",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 854,
+          "height": 480,
+          "bitrate": 1500000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      },
+      {
+        "task_id": "h265_1080p_6fbdc490",
+        "dependencies": [
+          "h264_1080p_6fbdc490"
+        ],
+        "encoding_params": {
+          "codec": "h265",
+          "width": 1920,
+          "height": 1080,
+          "bitrate": 3500000,
+          "preset": "medium",
+          "container": "mp4"
+        },
+        "status": "pending"
+      }
+    ],
+    "created_at": "2026-04-17T10:51:07.733371"
+  },
+  "60f7d25c-3d0e-4549-ba1f-88ea7181f4fc": {
+    "dag_id": "60f7d25c-3d0e-4549-ba1f-88ea7181f4fc",
+    "asset_uuid": "3b0569a9-ab2a-4692-adfc-278c24e9f8e0",
+    "status": "pending",
+    "task_count": 2,
+    "tasks": [
+      {
+        "task_id": "h264_1080p_hq_3b0569a9",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "bitrate": 8000000,
+          "preset": "slow",
+          "container": "mp4"
+        },
+        "status": "pending"
+      },
+      {
+        "task_id": "h264_720p_hq_3b0569a9",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 1280,
+          "height": 720,
+          "bitrate": 5000000,
+          "preset": "slow",
+          "container": "mp4"
+        },
+        "status": "pending"
+      }
+    ],
+    "created_at": "2026-04-17T10:52:49.331661"
+  },
+  "799fc6f7-d69e-414a-b471-1b999e98dd7b": {
+    "dag_id": "799fc6f7-d69e-414a-b471-1b999e98dd7b",
+    "asset_uuid": "aac135a8-b5e5-48f4-9e95-b1cbb7138dff",
+    "status": "pending",
+    "task_count": 2,
+    "tasks": [
+      {
+        "task_id": "h264_720p_fast_aac135a8",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 1280,
+          "height": 720,
+          "bitrate": 2500000,
+          "preset": "fast",
+          "container": "mp4"
+        },
+        "status": "pending"
+      },
+      {
+        "task_id": "h264_480p_fast_aac135a8",
+        "dependencies": [],
+        "encoding_params": {
+          "codec": "h264",
+          "width": 854,
+          "height": 480,
+          "bitrate": 1200000,
+          "preset": "fast",
+          "container": "mp4"
+        },
+        "status": "pending"
+      }
+    ],
+    "created_at": "2026-04-17T10:53:27.385681"
+  }
+}

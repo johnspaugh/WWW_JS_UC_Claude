@@ -156,5 +156,479 @@
     },
     "created_at": "2026-04-10T09:53:14.986023",
     "updated_at": "2026-04-10T09:53:15.013171"
+  },
+  "ba4fdeeb-0789-4478-af85-3223d7fea0f8": {
+    "asset_id": "ba4fdeeb-0789-4478-af85-3223d7fea0f8",
+    "video_type": "movie",
+    "source_url": "./service/asset_bucket\\demo_movie.mp4",
+    "temp_url": "./service/temp_bucket\\demo_movie.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 5000000,
+      "duration": 7200.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 6,
+          "sample_rate": 48000,
+          "bitrate": 384000
+        },
+        {
+          "codec": "ac3",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 18
+    },
+    "created_at": "2026-04-10T10:36:02.013431",
+    "updated_at": "2026-04-10T10:36:02.045235"
+  },
+  "7fa16fba-ec0e-4955-b6a8-9bfea10caf28": {
+    "asset_id": "7fa16fba-ec0e-4955-b6a8-9bfea10caf28",
+    "video_type": "movie",
+    "source_url": "./service/asset_bucket\\Testing6SecondVideo.mp4",
+    "temp_url": "./service/temp_bucket\\Testing6SecondVideo.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 5000000,
+      "duration": 7200.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 6,
+          "sample_rate": 48000,
+          "bitrate": 384000
+        },
+        {
+          "codec": "ac3",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 17266684
+    },
+    "created_at": "2026-04-10T10:36:02.070053",
+    "updated_at": "2026-04-10T10:36:02.100550"
+  },
+  "2e3178af-911c-4631-ae59-f277c4a470ce": {
+    "asset_id": "2e3178af-911c-4631-ae59-f277c4a470ce",
+    "video_type": "movie",
+    "source_url": "./service/asset_bucket\\test_movie.mp4",
+    "temp_url": "./service/temp_bucket\\test_movie.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 5000000,
+      "duration": 7200.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 6,
+          "sample_rate": 48000,
+          "bitrate": 384000
+        },
+        {
+          "codec": "ac3",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 50
+    },
+    "created_at": "2026-04-10T10:36:02.108146",
+    "updated_at": "2026-04-10T10:36:02.136541"
+  },
+  "171050e7-6310-41cf-beaa-5781bcc0f168": {
+    "asset_id": "171050e7-6310-41cf-beaa-5781bcc0f168",
+    "video_type": "trailer",
+    "source_url": "./service/asset_bucket\\test_trailer.mp4",
+    "temp_url": "./service/temp_bucket\\test_trailer.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 8000000,
+      "duration": 150.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 52
+    },
+    "created_at": "2026-04-10T10:36:02.142430",
+    "updated_at": "2026-04-10T10:36:02.170992"
+  },
+  "94277ff8-4de0-430b-ad53-f25192c403a8": {
+    "asset_id": "94277ff8-4de0-430b-ad53-f25192c403a8",
+    "video_type": "user-content",
+    "source_url": "./service/asset_bucket\\test_user_content.mp4",
+    "temp_url": "./service/temp_bucket\\test_user_content.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1280x720",
+      "width": 1280,
+      "height": 720,
+      "bitrate": 2500000,
+      "duration": 300.0,
+      "frame_rate": 30.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 2,
+          "sample_rate": 44100,
+          "bitrate": 128000
+        }
+      ],
+      "file_size": 57
+    },
+    "created_at": "2026-04-10T10:36:02.181984",
+    "updated_at": "2026-04-10T10:36:02.206175"
+  },
+  "a90cc826-b13c-4109-9f84-a007f79eaec4": {
+    "asset_id": "a90cc826-b13c-4109-9f84-a007f79eaec4",
+    "video_type": "movie",
+    "source_url": "./service/asset_bucket\\demo_movie.mp4",
+    "temp_url": "./service/temp_bucket\\demo_movie.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 5000000,
+      "duration": 7200.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 6,
+          "sample_rate": 48000,
+          "bitrate": 384000
+        },
+        {
+          "codec": "ac3",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 18
+    },
+    "created_at": "2026-04-10T10:54:06.784923",
+    "updated_at": "2026-04-10T10:57:26.837667"
+  },
+  "ef351075-872c-427d-bbf4-abf3b4079a99": {
+    "asset_id": "ef351075-872c-427d-bbf4-abf3b4079a99",
+    "video_type": "movie",
+    "source_url": "./service/asset_bucket\\Testing6SecondVideo.mp4",
+    "temp_url": "./service/temp_bucket\\Testing6SecondVideo.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 5000000,
+      "duration": 7200.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 6,
+          "sample_rate": 48000,
+          "bitrate": 384000
+        },
+        {
+          "codec": "ac3",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 17266684
+    },
+    "created_at": "2026-04-10T10:57:26.864647",
+    "updated_at": "2026-04-10T10:57:30.703105"
+  },
+  "0959adc1-972e-4df1-8135-7fbe85f8ba8e": {
+    "asset_id": "0959adc1-972e-4df1-8135-7fbe85f8ba8e",
+    "video_type": "movie",
+    "source_url": "./service/asset_bucket\\test_movie.mp4",
+    "temp_url": "./service/temp_bucket\\test_movie.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 5000000,
+      "duration": 7200.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 6,
+          "sample_rate": 48000,
+          "bitrate": 384000
+        },
+        {
+          "codec": "ac3",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 50
+    },
+    "created_at": "2026-04-10T10:57:30.712026",
+    "updated_at": "2026-04-10T10:57:34.162890"
+  },
+  "a9a1041d-5d13-497a-8c9d-8f49c89fe5a3": {
+    "asset_id": "a9a1041d-5d13-497a-8c9d-8f49c89fe5a3",
+    "video_type": "trailer",
+    "source_url": "./service/asset_bucket\\test_trailer.mp4",
+    "temp_url": "./service/temp_bucket\\test_trailer.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 8000000,
+      "duration": 150.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 52
+    },
+    "created_at": "2026-04-10T10:57:34.170433",
+    "updated_at": "2026-04-10T10:57:41.526972"
+  },
+  "8151b16c-c2bf-48c7-8353-5895c1504bc6": {
+    "asset_id": "8151b16c-c2bf-48c7-8353-5895c1504bc6",
+    "video_type": "user-content",
+    "source_url": "./service/asset_bucket\\test_user_content.mp4",
+    "temp_url": "./service/temp_bucket\\test_user_content.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1280x720",
+      "width": 1280,
+      "height": 720,
+      "bitrate": 2500000,
+      "duration": 300.0,
+      "frame_rate": 30.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 2,
+          "sample_rate": 44100,
+          "bitrate": 128000
+        }
+      ],
+      "file_size": 57
+    },
+    "created_at": "2026-04-10T10:57:41.537492",
+    "updated_at": "2026-04-10T10:57:45.868652"
+  },
+  "1f91003b-1349-47fc-ab3e-dc677c89d893": {
+    "asset_id": "1f91003b-1349-47fc-ab3e-dc677c89d893",
+    "video_type": "movie",
+    "source_url": "./service/asset_bucket\\demo_movie.mp4",
+    "temp_url": "./service/temp_bucket\\demo_movie.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 5000000,
+      "duration": 7200.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 6,
+          "sample_rate": 48000,
+          "bitrate": 384000
+        },
+        {
+          "codec": "ac3",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 18
+    },
+    "created_at": "2026-04-17T10:35:49.449076",
+    "updated_at": "2026-04-17T10:42:21.059478"
+  },
+  "9324eb40-d4b6-444e-83d4-212489e461f6": {
+    "asset_id": "9324eb40-d4b6-444e-83d4-212489e461f6",
+    "video_type": "movie",
+    "source_url": "./service/asset_bucket\\Testing6SecondVideo.mp4",
+    "temp_url": "./service/temp_bucket\\Testing6SecondVideo.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 5000000,
+      "duration": 7200.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 6,
+          "sample_rate": 48000,
+          "bitrate": 384000
+        },
+        {
+          "codec": "ac3",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 17266684
+    },
+    "created_at": "2026-04-17T10:43:40.734691",
+    "updated_at": "2026-04-17T10:48:16.934523"
+  },
+  "6fbdc490-29e2-47a4-9cd1-4ee059b23fb4": {
+    "asset_id": "6fbdc490-29e2-47a4-9cd1-4ee059b23fb4",
+    "video_type": "movie",
+    "source_url": "./service/asset_bucket\\test_movie.mp4",
+    "temp_url": "./service/temp_bucket\\test_movie.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 5000000,
+      "duration": 7200.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 6,
+          "sample_rate": 48000,
+          "bitrate": 384000
+        },
+        {
+          "codec": "ac3",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 50
+    },
+    "created_at": "2026-04-17T10:50:14.998677",
+    "updated_at": "2026-04-17T10:51:28.366482"
+  },
+  "3b0569a9-ab2a-4692-adfc-278c24e9f8e0": {
+    "asset_id": "3b0569a9-ab2a-4692-adfc-278c24e9f8e0",
+    "video_type": "trailer",
+    "source_url": "./service/asset_bucket\\test_trailer.mp4",
+    "temp_url": "./service/temp_bucket\\test_trailer.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "bitrate": 8000000,
+      "duration": 150.0,
+      "frame_rate": 24.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 2,
+          "sample_rate": 48000,
+          "bitrate": 192000
+        }
+      ],
+      "file_size": 52
+    },
+    "created_at": "2026-04-17T10:52:01.864323",
+    "updated_at": "2026-04-17T10:52:51.736099"
+  },
+  "aac135a8-b5e5-48f4-9e95-b1cbb7138dff": {
+    "asset_id": "aac135a8-b5e5-48f4-9e95-b1cbb7138dff",
+    "video_type": "user-content",
+    "source_url": "./service/asset_bucket\\test_user_content.mp4",
+    "temp_url": "./service/temp_bucket\\test_user_content.mp4",
+    "status": "completed",
+    "inspection_data": {
+      "codec": "h264",
+      "resolution": "1280x720",
+      "width": 1280,
+      "height": 720,
+      "bitrate": 2500000,
+      "duration": 300.0,
+      "frame_rate": 30.0,
+      "color_space": "yuv420p",
+      "audio_tracks": [
+        {
+          "codec": "aac",
+          "channels": 2,
+          "sample_rate": 44100,
+          "bitrate": 128000
+        }
+      ],
+      "file_size": 57
+    },
+    "created_at": "2026-04-17T10:52:53.540358",
+    "updated_at": "2026-04-17T10:53:41.526649"
   }
 }
