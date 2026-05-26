@@ -198,7 +198,11 @@ class Orchestrator:
         """Load workflow table from disk"""
         if os.path.exists(self.workflow_table_path):
             with open(self.workflow_table_path, 'r') as f:
-                return json.load(f)
+                try:
+                    return json.load(f)
+                except json.JSONDecodeError:
+                    logger.warning(f"workflow_table at {self.workflow_table_path} was empty or corrupt — starting fresh")
+                    return {}
         return {}
 
     def get_asset_status(self, asset_id: str) -> Dict[str, Any]:

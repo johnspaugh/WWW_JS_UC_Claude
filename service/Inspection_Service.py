@@ -5,6 +5,7 @@ Analyzes video technical properties and metadata using FFprobe/MediaInfo
 import os
 import logging
 from datetime import datetime
+from fractions import Fraction
 from models import AssetRecord, AssetStatus, InspectionData
 from Ingest_Service import IngestService
 
@@ -42,7 +43,7 @@ class InspectionService:
         
         # In real implementation, would run:
         # ffprobe -v quiet -print_format json -show_format -show_streams {asset.source_url}
-        inspection_data = self._extract_metadata(asset.source_url)
+        inspection_data = self._extract_metadata(asset.source_url, asset.video_type)
         
         # Update asset with inspection data
         self.ingest_service.update_asset_status(asset_id, AssetStatus.INSPECTED, inspection_data)
@@ -51,7 +52,7 @@ class InspectionService:
         
         return inspection_data
 
-    def _extract_metadata(self, video_path: str) -> InspectionData:
+    def _extract_metadata(self, video_path: str, video_type: str) -> InspectionData:
         """
         Extract video metadata using FFprobe (simulated)
         
@@ -78,7 +79,7 @@ class InspectionService:
             height=int(video_stream['height']),
             bitrate=int(probe_data['format'].get('bit_rate', 0)),
             duration=float(probe_data['format']['duration']),
-            frame_rate=eval(video_stream['r_frame_rate']),  # Convert "30/1" to 30.0
+            frame_rate=float(Fraction(video_stream['r_frame_rate'])),  # Convert "30/1" to 30.0
             color_space=video_stream.get('pix_fmt', 'unknown'),
             audio_tracks=[{
                 'codec': stream['codec_name'],
@@ -97,7 +98,25 @@ class InspectionService:
         # Simulate different video types based on filename or size
         filename = os.path.basename(video_path).lower()
         
-        if 'movie' in filename or file_size > 1000000:  # Large files = movies
+        if 'legacy' in filename:
+            inspection_data = InspectionData(
+                codec='mpeg2video',
+                resolution='1920x1080',
+                width=1920,
+                height=1080,
+                bitrate=8000000,
+                duration=7200.0,
+                frame_rate=24.0,
+                color_space='yuv420p',
+                audio_tracks=[{
+                    'codec': 'mp2',
+                    'channels': 2,
+                    'sample_rate': 48000,
+                    'bitrate': 192000
+                }],
+                file_size=file_size
+            )
+        elif video_type == 'movie':
             inspection_data = InspectionData(
                 codec='h264',
                 resolution='1920x1080',
@@ -120,7 +139,7 @@ class InspectionService:
                 }],
                 file_size=file_size
             )
-        elif 'trailer' in filename:
+        elif video_type == 'trailer':
             inspection_data = InspectionData(
                 codec='h264',
                 resolution='1920x1080',
@@ -138,7 +157,7 @@ class InspectionService:
                 }],
                 file_size=file_size
             )
-        elif 'user' in filename or 'content' in filename:
+        elif video_type == 'user-content':
             inspection_data = InspectionData(
                 codec='h264',
                 resolution='1280x720',

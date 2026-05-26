@@ -188,5 +188,9 @@ class IngestService:
         """Load assets from asset table (simulates database query)"""
         if os.path.exists(self.asset_table_path):
             with open(self.asset_table_path, 'r') as f:
-                return json.load(f)
+                try:
+                    return json.load(f)
+                except json.JSONDecodeError:
+                    logger.warning(f"asset_table at {self.asset_table_path} was empty or corrupt — starting fresh")
+                    return {}
         return {}
