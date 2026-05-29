@@ -5,7 +5,7 @@ Evaluates video type and inspection results to generate DAGs
 import uuid
 import logging
 from typing import Dict, List, Callable
-from models import AssetRecord, EncodingTask, DAGDefinition
+from models import AssetTable, EncodingTask, DAGDefinition
 
 logger = logging.getLogger(__name__)
 
@@ -39,7 +39,7 @@ class RulesEngine:
         self.rules.sort(key=lambda x: x['priority'])
         logger.info(f"Added rule: {name} (priority {priority})")
 
-    def evaluate_conditions(self, conditions: List[Dict], asset: AssetRecord) -> bool:
+    def evaluate_conditions(self, conditions: List[Dict], asset: AssetTable) -> bool:
         """
         Evaluate if all conditions are met
         
@@ -71,7 +71,7 @@ class RulesEngine:
         logger.debug(f"All conditions met for asset {asset.asset_id}")
         return True
 
-    def _get_field_value(self, field: str, asset: AssetRecord):
+    def _get_field_value(self, field: str, asset: AssetTable):
         """Extract field value from asset record"""
         if field == 'video_type':
             return asset.video_type
@@ -116,7 +116,7 @@ class RulesEngine:
             logger.warning(f"Unknown operator: {operator}")
             return False
 
-    def generate_dag_for_asset(self, asset: AssetRecord) -> DAGDefinition:
+    def generate_dag_for_asset(self, asset: AssetTable) -> DAGDefinition:
         """
         Generate DAG based on rules evaluation
         
@@ -174,7 +174,7 @@ class RulesEngine:
         logger.warning(f"No matching rule for asset {asset.asset_id}, using default DAG")
         return self._create_default_dag(asset)
 
-    def _create_default_dag(self, asset: AssetRecord) -> DAGDefinition:
+    def _create_default_dag(self, asset: AssetTable) -> DAGDefinition:
         """Create default encoding DAG when no rules match"""
         default_task = EncodingTask(
             task_id=f"default_encode_{asset.asset_id[:8]}",

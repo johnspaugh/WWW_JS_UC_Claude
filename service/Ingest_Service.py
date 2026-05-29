@@ -10,7 +10,7 @@ import logging
 from datetime import datetime
 from typing import Dict
 from dataclasses import asdict
-from models import AssetRecord, AssetStatus, InspectionData
+from models import AssetTable, AssetStatus, InspectionData
 
 logger = logging.getLogger(__name__)
 
@@ -26,7 +26,7 @@ class IngestService:
         os.makedirs(asset_bucket, exist_ok=True)
         os.makedirs(temp_bucket, exist_ok=True)
 
-    def ingest_video(self, video_filename: str, video_type: str, metadata: Dict = None) -> AssetRecord:
+    def ingest_video(self, video_filename: str, video_type: str, metadata: Dict = None) -> AssetTable:
         """
         Initiates video ingest workflow - implements POST /api/v1/ingest
 
@@ -39,7 +39,7 @@ class IngestService:
             metadata: Optional additional metadata
 
         Returns:
-            AssetRecord with generated UUID, asset_bucket URL, and temp_bucket URL
+            AssetTable with generated UUID, asset_bucket URL, and temp_bucket URL
         """
         asset_id = str(uuid.uuid4())
 
@@ -53,7 +53,7 @@ class IngestService:
         shutil.copy2(source_url, temp_url)
 
         # Create asset record — source_url stays in asset_bucket (original untouched)
-        asset = AssetRecord(
+        asset = AssetTable(
             asset_id=asset_id,
             video_type=video_type,
             source_url=source_url,
@@ -67,7 +67,7 @@ class IngestService:
 
         return asset
 
-    def get_asset(self, asset_id: str) -> AssetRecord:
+    def get_asset(self, asset_id: str) -> AssetTable:
         """
         Get asset by ID - implements GET /api/v1/assets/{uuid}
         
@@ -75,7 +75,7 @@ class IngestService:
             asset_id: UUID of the asset
             
         Returns:
-            AssetRecord with current status and metadata
+            AssetTable with current status and metadata
         """
         assets = self._load_assets()
         if asset_id not in assets:
@@ -88,7 +88,7 @@ class IngestService:
         if asset_data.get('inspection_data'):
             inspection_data = InspectionData(**asset_data['inspection_data'])
         
-        return AssetRecord(
+        return AssetTable(
             asset_id=asset_data['asset_id'],
             video_type=asset_data['video_type'],
             source_url=asset_data['source_url'],
@@ -163,7 +163,7 @@ class IngestService:
             }
         }
 
-    def _save_asset(self, asset: AssetRecord):
+    def _save_asset(self, asset: AssetTable):
         """Save asset to asset table (simulates database)"""
         assets = self._load_assets()
         

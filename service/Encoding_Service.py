@@ -5,7 +5,7 @@ Executes transcoding tasks based on DAG workflows
 import os
 import logging
 from typing import List, Dict
-from models import DAGDefinition, AssetRecord, TaskStatus
+from models import DAGDefinition, AssetTable, TaskStatus
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +25,7 @@ class EncodingService:
         os.makedirs(encoded_bucket, exist_ok=True)
         os.makedirs(temp_bucket, exist_ok=True)
 
-    def execute_dag(self, dag_def: DAGDefinition, source_asset: AssetRecord) -> List[str]:
+    def execute_dag(self, dag_def: DAGDefinition, source_asset: AssetTable) -> List[str]:
         """
         Execute DAG tasks in dependency order
         
@@ -94,7 +94,7 @@ class EncodingService:
         logger.info(f"DAG execution complete: {dag_def.dag_id} - {len(output_urls)} outputs")
         return output_urls
 
-    def _execute_task(self, task, source_asset: AssetRecord) -> str:
+    def _execute_task(self, task, source_asset: AssetTable) -> str:
         """
         Execute a single encoding task
         

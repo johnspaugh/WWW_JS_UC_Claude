@@ -6,7 +6,7 @@ import os
 import logging
 from datetime import datetime
 from fractions import Fraction
-from models import AssetRecord, AssetStatus, InspectionData
+from models import AssetStatus, InspectionData
 from Ingest_Service import IngestService
 
 logger = logging.getLogger(__name__)
