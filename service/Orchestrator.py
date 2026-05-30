@@ -177,7 +177,7 @@ class Orchestrator:
         workflows[dag_def.dag_id] = {
             'dag_id': dag_def.dag_id,
             'asset_uuid': asset_id,
-            'status': dag_def.status,
+            'status': dag_def.status.value,
             'task_count': len(dag_def.tasks),
             'tasks': [
                 {

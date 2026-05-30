@@ -58,14 +58,14 @@ class AssetTable:
 
 
 @dataclass
-class EncodingTask:
-    """Task definition as specified in document"""
-    task_id: str
-    dependencies: List[str]
-    encoding_params: Dict[str, Any]
-    status: TaskStatus = TaskStatus.PENDING
-    output_url: str = None
-    retry_count: int = 0
+class TaskDefinition:
+    """Task definition as specified in document""" # was called EncodingTask temporarily
+    task_id: str # Unique identifier within the DAG
+    dependencies: List[str] # Array of task_ids that must complete first
+    encoding_params: Dict[str, Any] # Target codec, resolution, bitrate, quality preset, container format
+    status: TaskStatus = TaskStatus.PENDING # pending, running, success, failed
+    output_url: str = None # S3 URL of encoded output (populated on completion)
+    retry_count: int = 0 # Number of retry attempts
 
 
 @dataclass
@@ -73,8 +73,8 @@ class DAGDefinition:
     """DAG structure as specified in document"""
     dag_id: UUID # Unique DAG identifier
     asset_uuid: UUID # Foeign key to asset table
-    tasks: List[EncodingTask]  #Array of task definitions with dependencies
-    status: str = "pending"  #pending, running, success, failed
+    tasks: List[TaskDefinition]  #Array of task definitions with dependencies
+    status: TaskStatus = TaskStatus.PENDING
 
 @dataclass
 class MediaTable:

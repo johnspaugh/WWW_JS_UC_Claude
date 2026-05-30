@@ -98,85 +98,105 @@ class InspectionService:
         # Simulate different video types based on filename or size
         filename = os.path.basename(video_path).lower()
         
-        if 'legacy' in filename:
-            inspection_data = InspectionData(
-                codec='mpeg2video',
-                resolution='1920x1080',
-                width=1920,
-                height=1080,
-                bitrate=8000000,
-                duration=7200.0,
-                frame_rate=24.0,
-                color_space='yuv420p',
-                audio_tracks=[{
-                    'codec': 'mp2',
-                    'channels': 2,
-                    'sample_rate': 48000,
-                    'bitrate': 192000
-                }],
-                file_size=file_size
-            )
-        elif video_type == 'movie':
-            inspection_data = InspectionData(
-                codec='h264',
-                resolution='1920x1080',
-                width=1920,
-                height=1080,
-                bitrate=5000000,
-                duration=7200.0,  # 2 hour movie
-                frame_rate=24.0,
-                color_space='yuv420p',
-                audio_tracks=[{
-                    'codec': 'aac',
-                    'channels': 6,  # 5.1 surround
-                    'sample_rate': 48000,
-                    'bitrate': 384000
-                }, {
-                    'codec': 'ac3',  # Secondary audio track
-                    'channels': 2,
-                    'sample_rate': 48000,
-                    'bitrate': 192000
-                }],
-                file_size=file_size
-            )
-        elif video_type == 'trailer':
-            inspection_data = InspectionData(
-                codec='h264',
-                resolution='1920x1080',
-                width=1920,
-                height=1080,
-                bitrate=8000000,  # Higher bitrate for trailer
-                duration=150.0,  # 2.5 minute trailer
-                frame_rate=24.0,
-                color_space='yuv420p',
-                audio_tracks=[{
-                    'codec': 'aac',
-                    'channels': 2,
-                    'sample_rate': 48000,
-                    'bitrate': 192000
-                }],
-                file_size=file_size
-            )
-        elif video_type == 'user-content':
-            inspection_data = InspectionData(
-                codec='h264',
-                resolution='1280x720',
-                width=1280,
-                height=720,
-                bitrate=2500000,
-                duration=300.0,  # 5 minute user video
-                frame_rate=30.0,
-                color_space='yuv420p',
-                audio_tracks=[{
-                    'codec': 'aac',
-                    'channels': 2,
-                    'sample_rate': 44100,
-                    'bitrate': 128000
-                }],
-                file_size=file_size
-            )
-        else:  # Default TV episode
-            inspection_data = InspectionData(
+        
+        ######want to just  simulate a successful inspection  regardless of file presence for testing purposes
+        # if video_type == 'movie':
+        #     inspection_data = InspectionData(
+        #         codec='h264',
+        #         resolution='1920x1080',
+        #         width=1920,
+        #         height=1080,
+        #         bitrate=5000000,
+        #         duration=7200.0,  # 2 hour movie
+        #         frame_rate=24.0,
+        #         color_space='yuv420p',
+        #         audio_tracks=[{
+        #             'codec': 'aac',
+        #             'channels': 6,  # 5.1 surround
+        #             'sample_rate': 48000,
+        #             'bitrate': 384000
+        #         }, {
+        #             'codec': 'ac3',  # Secondary audio track
+        #             'channels': 2,
+        #             'sample_rate': 48000,
+        #             'bitrate': 192000
+        #         }],
+        #         file_size=file_size
+        #     )
+        # elif video_type == 'user-content':
+        #     inspection_data = InspectionData(
+        #         codec='h264',
+        #         resolution='1280x720',
+        #         width=1280,
+        #         height=720,
+        #         bitrate=2500000,
+        #         duration=300.0,  # 5 minute user video
+        #         frame_rate=30.0,
+        #         color_space='yuv420p',
+        #         audio_tracks=[{
+        #             'codec': 'aac',
+        #             'channels': 2,
+        #             'sample_rate': 44100,
+        #             'bitrate': 128000
+        #         }],
+        #         file_size=file_size
+        #     )
+        # elif video_type == 'trailer':
+        #     inspection_data = InspectionData(
+        #         codec='h264',
+        #         resolution='1920x1080',
+        #         width=1920,
+        #         height=1080,
+        #         bitrate=8000000,  # Higher bitrate for trailer
+        #         duration=150.0,  # 2.5 minute trailer
+        #         frame_rate=24.0,
+        #         color_space='yuv420p',
+        #         audio_tracks=[{
+        #             'codec': 'aac',
+        #             'channels': 2,
+        #             'sample_rate': 48000,
+        #             'bitrate': 192000
+        #         }],
+        #         file_size=file_size
+        #     )
+        # elif 'legacy' in filename:
+        #     inspection_data = InspectionData(
+        #         codec='mpeg2video',
+        #         resolution='1920x1080',
+        #         width=1920,
+        #         height=1080,
+        #         bitrate=8000000,
+        #         duration=7200.0,
+        #         frame_rate=24.0,
+        #         color_space='yuv420p',
+        #         audio_tracks=[{
+        #             'codec': 'mp2',
+        #             'channels': 2,
+        #             'sample_rate': 48000,
+        #             'bitrate': 192000
+        #         }],
+        #         file_size=file_size
+        #     )
+        # else:  # Default TV episode
+        #     inspection_data = InspectionData(
+        #         codec='h264',
+        #         resolution='1920x1080',
+        #         width=1920,
+        #         height=1080,
+        #         bitrate=4000000,
+        #         duration=2700.0,  # 45 minute episode
+        #         frame_rate=23.976,  # Broadcast framerate
+        #         color_space='yuv420p',
+        #         audio_tracks=[{
+        #             'codec': 'aac',
+        #             'channels': 2,
+        #             'sample_rate': 48000,
+        #             'bitrate': 128000
+        #         }],
+        #         file_size=file_size
+        #     )
+        ######want to just  simulate a successful inspection  regardless of file presence for testing purposes
+        inspection_data = InspectionData(
                 codec='h264',
                 resolution='1920x1080',
                 width=1920,

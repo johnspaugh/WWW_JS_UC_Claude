@@ -108,7 +108,7 @@ class EncodingService:
         7. Clean up temporary files
         
         Args:
-            task: EncodingTask to execute
+            task: TaskDefinition to execute
             source_asset: Source asset record
             
         Returns:

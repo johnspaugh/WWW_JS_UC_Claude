@@ -1354,3 +1354,114 @@
 2026-05-26 14:10:29,340 - Ingest_Service - INFO - Asset 1da695fb-de99-457a-8eaf-66af1843bb54 status updated to completed
 2026-05-26 14:10:29,340 - DAG - INFO - task.completed - execute_encoding: Encoding complete: 4 rendition(s) in encoded_bucket
 2026-05-26 14:10:29,341 - DAG - INFO - dag.completed - pipeline_1da695fb
+2026-05-29 19:51:47,908 - __main__ - INFO - Initializing Video Transcoding Service
+2026-05-29 19:51:54,998 - Rules_Engine - INFO - Added rule: premium_movie_abr (priority 1)
+2026-05-29 19:51:54,998 - Rules_Engine - INFO - Added rule: user_content_quick (priority 2)
+2026-05-29 19:51:54,999 - Rules_Engine - INFO - Added rule: legacy_codec_upgrade (priority 3)
+2026-05-29 19:51:54,999 - Rules_Engine - INFO - Added rule: tv_episode_standard (priority 4)
+2026-05-29 19:51:54,999 - Rules_Engine - INFO - Added rule: trailer_high_quality (priority 5)
+2026-05-29 19:51:55,000 - Rules_Engine - INFO - Encoding rules setup complete - 5 rules configured
+2026-05-29 19:51:55,000 - Orchestrator - INFO - Orchestrator initialized with all services
+2026-05-29 19:52:35,203 - __main__ - INFO - Found 1 video(s) in asset_bucket: ['Testing6SecondVideo.mp4']
+2026-05-29 19:53:22,004 - Orchestrator - INFO - === STEP 1: INGEST ===
+2026-05-29 19:53:22,027 - Ingest_Service - INFO - asset.ingested - 4412bdb7-fc70-4e28-aba2-1752789097cf from asset_bucket/Testing6SecondVideo.mp4 as movie
+2026-05-29 19:53:22,027 - Ingest_Service - INFO - Working copy created: ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-05-29 19:53:22,028 - Orchestrator - INFO - === STEP 2: INGEST RULES EVALUATION (building pipeline DAG) ===
+2026-05-29 19:53:22,028 - DAG - INFO - dag.started - pipeline_4412bdb7
+2026-05-29 19:53:27,789 - DAG - INFO - task.started - inspect_video
+2026-05-29 19:53:30,051 - Orchestrator - INFO - === STEP 3: INSPECTION ===
+2026-05-29 19:53:32,038 - Inspection_Service - INFO - Starting inspection for asset 4412bdb7-fc70-4e28-aba2-1752789097cf
+2026-05-29 19:53:54,346 - Ingest_Service - INFO - Asset 4412bdb7-fc70-4e28-aba2-1752789097cf status updated to inspected
+2026-05-29 19:53:55,879 - Inspection_Service - INFO - asset.inspected - 4412bdb7-fc70-4e28-aba2-1752789097cf: 1920x1080, 2700.0s
+2026-05-29 19:54:03,997 - DAG - INFO - task.completed - inspect_video: Inspected: 1920x1080, 2700.0s, codec=h264
+2026-05-29 19:54:22,483 - DAG - INFO - task.started - evaluate_post_inspect_rules
+2026-05-29 19:54:23,241 - Orchestrator - INFO - === STEP 4: POST-INSPECT RULES EVALUATION ===
+2026-05-29 19:54:23,243 - Rules_Engine - INFO - Rule matched: premium_movie_abr for asset 4412bdb7-fc70-4e28-aba2-1752789097cf
+2026-05-29 19:54:23,243 - Rules_Engine - INFO - dag.created - 50f307cc-23ae-40f1-a436-897818013cb7 with 4 tasks for rule premium_movie_abr
+2026-05-29 19:54:26,679 - DAG - ERROR - task.failed - evaluate_post_inspect_rules: Object of type TaskStatus is not JSON serializable
+2026-05-29 19:54:38,325 - Orchestrator - ERROR - Workflow failed for Testing6SecondVideo.mp4: Pipeline DAG execution failed — see logs for task-level details
+2026-05-29 19:54:41,065 - Ingest_Service - INFO - Asset 4412bdb7-fc70-4e28-aba2-1752789097cf status updated to failed
+2026-05-29 20:02:07,220 - __main__ - INFO - Initializing Video Transcoding Service
+2026-05-29 20:04:12,564 - Rules_Engine - INFO - Added rule: premium_movie_abr (priority 1)
+2026-05-29 20:04:12,565 - Rules_Engine - INFO - Added rule: user_content_quick (priority 2)
+2026-05-29 20:04:12,565 - Rules_Engine - INFO - Added rule: legacy_codec_upgrade (priority 3)
+2026-05-29 20:04:12,566 - Rules_Engine - INFO - Added rule: tv_episode_standard (priority 4)
+2026-05-29 20:04:12,566 - Rules_Engine - INFO - Added rule: trailer_high_quality (priority 5)
+2026-05-29 20:04:12,566 - Rules_Engine - INFO - Encoding rules setup complete - 5 rules configured
+2026-05-29 20:04:12,566 - Orchestrator - INFO - Orchestrator initialized with all services
+2026-05-29 20:04:17,808 - __main__ - INFO - Found 1 video(s) in asset_bucket: ['Testing6SecondVideo.mp4']
+2026-05-29 20:04:26,986 - Orchestrator - INFO - === STEP 1: INGEST ===
+2026-05-29 20:04:27,016 - Ingest_Service - INFO - asset.ingested - 783b4b5f-94f3-4e6f-afce-b6d89bb6bc2f from asset_bucket/Testing6SecondVideo.mp4 as movie
+2026-05-29 20:04:27,016 - Ingest_Service - INFO - Working copy created: ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-05-29 20:04:27,017 - Orchestrator - INFO - === STEP 2: INGEST RULES EVALUATION (building pipeline DAG) ===
+2026-05-29 20:04:27,017 - DAG - INFO - dag.started - pipeline_783b4b5f
+2026-05-29 20:04:28,729 - DAG - INFO - task.started - inspect_video
+2026-05-29 20:04:28,729 - Orchestrator - INFO - === STEP 3: INSPECTION ===
+2026-05-29 20:04:29,516 - Inspection_Service - INFO - Starting inspection for asset 783b4b5f-94f3-4e6f-afce-b6d89bb6bc2f
+2026-05-29 20:04:31,467 - Ingest_Service - INFO - Asset 783b4b5f-94f3-4e6f-afce-b6d89bb6bc2f status updated to inspected
+2026-05-29 20:04:31,467 - Inspection_Service - INFO - asset.inspected - 783b4b5f-94f3-4e6f-afce-b6d89bb6bc2f: 1920x1080, 2700.0s
+2026-05-29 20:04:31,467 - DAG - INFO - task.completed - inspect_video: Inspected: 1920x1080, 2700.0s, codec=h264
+2026-05-29 20:04:32,336 - DAG - INFO - task.started - evaluate_post_inspect_rules
+2026-05-29 20:04:32,337 - Orchestrator - INFO - === STEP 4: POST-INSPECT RULES EVALUATION ===
+2026-05-29 20:04:32,338 - Rules_Engine - INFO - Rule matched: premium_movie_abr for asset 783b4b5f-94f3-4e6f-afce-b6d89bb6bc2f
+2026-05-29 20:04:32,340 - Rules_Engine - INFO - dag.created - 9cd68eba-e3fa-4e8b-8c50-1c3fb75ad6da with 4 tasks for rule premium_movie_abr
+2026-05-29 20:04:32,345 - Orchestrator - WARNING - workflow_table at ./workflow_table.json was empty or corrupt — starting fresh
+2026-05-29 20:04:32,347 - Orchestrator - INFO - workflow.saved - 9cd68eba-e3fa-4e8b-8c50-1c3fb75ad6da for asset 783b4b5f-94f3-4e6f-afce-b6d89bb6bc2f
+2026-05-29 20:04:32,347 - DAG - INFO - task.completed - evaluate_post_inspect_rules: DAG generated: 9cd68eba-e3fa-4e8b-8c50-1c3fb75ad6da (4 encoding tasks) — stored in workflow_table
+2026-05-29 20:04:33,480 - DAG - INFO - task.started - execute_encoding
+2026-05-29 20:04:33,480 - Orchestrator - INFO - === STEP 5: ENCODING EXECUTION ===
+2026-05-29 20:04:33,484 - Ingest_Service - INFO - Asset 783b4b5f-94f3-4e6f-afce-b6d89bb6bc2f status updated to encoding
+2026-05-29 20:04:33,485 - Encoding_Service - INFO - Starting DAG execution: 9cd68eba-e3fa-4e8b-8c50-1c3fb75ad6da for asset 783b4b5f-94f3-4e6f-afce-b6d89bb6bc2f
+2026-05-29 20:04:33,486 - Encoding_Service - INFO - task.started - h264_1080p_783b4b5f
+2026-05-29 20:04:33,486 - Encoding_Service - INFO - Encoding parameters for h264_1080p_783b4b5f:
+2026-05-29 20:04:33,486 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-05-29 20:04:33,487 - Encoding_Service - INFO -   Codec: h264
+2026-05-29 20:04:33,487 - Encoding_Service - INFO -   Resolution: 1920x1080
+2026-05-29 20:04:33,487 - Encoding_Service - INFO -   Bitrate: 5000000 bps
+2026-05-29 20:04:33,487 - Encoding_Service - INFO -   Preset: medium
+2026-05-29 20:04:33,487 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\783b4b5f_h264_1920x1080_medium.mp4
+2026-05-29 20:04:33,488 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\Testing6SecondVideo.mp4 -> ./service/encoded_bucket\783b4b5f_h264_1920x1080_medium.mp4
+2026-05-29 20:04:33,489 - Encoding_Service - INFO - Simulated encoding complete - would be ~67.5MB
+2026-05-29 20:04:33,489 - Encoding_Service - INFO - task.completed - h264_1080p_783b4b5f: ./service/encoded_bucket\783b4b5f_h264_1920x1080_medium.mp4
+2026-05-29 20:04:33,489 - Encoding_Service - INFO - Task completed: h264_1080p_783b4b5f
+2026-05-29 20:04:33,489 - Encoding_Service - INFO - task.started - h264_720p_783b4b5f
+2026-05-29 20:04:33,489 - Encoding_Service - INFO - Encoding parameters for h264_720p_783b4b5f:
+2026-05-29 20:04:33,490 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-05-29 20:04:33,490 - Encoding_Service - INFO -   Codec: h264
+2026-05-29 20:04:33,490 - Encoding_Service - INFO -   Resolution: 1280x720
+2026-05-29 20:04:33,491 - Encoding_Service - INFO -   Bitrate: 3000000 bps
+2026-05-29 20:04:33,491 - Encoding_Service - INFO -   Preset: medium
+2026-05-29 20:04:33,492 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\783b4b5f_h264_1280x720_medium.mp4
+2026-05-29 20:04:33,493 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\Testing6SecondVideo.mp4 -> ./service/encoded_bucket\783b4b5f_h264_1280x720_medium.mp4
+2026-05-29 20:04:33,497 - Encoding_Service - INFO - Simulated encoding complete - would be ~40.5MB
+2026-05-29 20:04:33,499 - Encoding_Service - INFO - task.completed - h264_720p_783b4b5f: ./service/encoded_bucket\783b4b5f_h264_1280x720_medium.mp4
+2026-05-29 20:04:33,499 - Encoding_Service - INFO - Task completed: h264_720p_783b4b5f
+2026-05-29 20:04:33,499 - Encoding_Service - INFO - task.started - h264_480p_783b4b5f
+2026-05-29 20:04:33,500 - Encoding_Service - INFO - Encoding parameters for h264_480p_783b4b5f:
+2026-05-29 20:04:33,500 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-05-29 20:04:33,501 - Encoding_Service - INFO -   Codec: h264
+2026-05-29 20:04:33,501 - Encoding_Service - INFO -   Resolution: 854x480
+2026-05-29 20:04:33,503 - Encoding_Service - INFO -   Bitrate: 1500000 bps
+2026-05-29 20:04:33,503 - Encoding_Service - INFO -   Preset: medium
+2026-05-29 20:04:33,503 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\783b4b5f_h264_854x480_medium.mp4
+2026-05-29 20:04:33,504 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\Testing6SecondVideo.mp4 -> ./service/encoded_bucket\783b4b5f_h264_854x480_medium.mp4
+2026-05-29 20:04:33,506 - Encoding_Service - INFO - Simulated encoding complete - would be ~20.2MB
+2026-05-29 20:04:33,507 - Encoding_Service - INFO - task.completed - h264_480p_783b4b5f: ./service/encoded_bucket\783b4b5f_h264_854x480_medium.mp4
+2026-05-29 20:04:33,508 - Encoding_Service - INFO - Task completed: h264_480p_783b4b5f
+2026-05-29 20:04:33,508 - Encoding_Service - INFO - task.started - h265_1080p_783b4b5f
+2026-05-29 20:04:33,509 - Encoding_Service - INFO - Encoding parameters for h265_1080p_783b4b5f:
+2026-05-29 20:04:33,509 - Encoding_Service - INFO -   Source (temp): ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-05-29 20:04:33,509 - Encoding_Service - INFO -   Codec: h265
+2026-05-29 20:04:33,509 - Encoding_Service - INFO -   Resolution: 1920x1080
+2026-05-29 20:04:33,509 - Encoding_Service - INFO -   Bitrate: 3500000 bps
+2026-05-29 20:04:33,510 - Encoding_Service - INFO -   Preset: medium
+2026-05-29 20:04:33,510 - Encoding_Service - INFO -   Output: ./service/encoded_bucket\783b4b5f_h265_1920x1080_medium.mp4
+2026-05-29 20:04:33,510 - Encoding_Service - INFO - Simulating encoding: ./service/temp_bucket\Testing6SecondVideo.mp4 -> ./service/encoded_bucket\783b4b5f_h265_1920x1080_medium.mp4
+2026-05-29 20:04:33,511 - Encoding_Service - INFO - Simulated encoding complete - would be ~47.2MB
+2026-05-29 20:04:33,512 - Encoding_Service - INFO - task.completed - h265_1080p_783b4b5f: ./service/encoded_bucket\783b4b5f_h265_1920x1080_medium.mp4
+2026-05-29 20:04:33,513 - Encoding_Service - INFO - Task completed: h265_1080p_783b4b5f
+2026-05-29 20:04:33,517 - Encoding_Service - INFO - temp.cleaned - removed working copy: ./service/temp_bucket\Testing6SecondVideo.mp4
+2026-05-29 20:04:33,521 - Encoding_Service - INFO - DAG execution complete: 9cd68eba-e3fa-4e8b-8c50-1c3fb75ad6da - 4 outputs
+2026-05-29 20:04:33,526 - Ingest_Service - INFO - Asset 783b4b5f-94f3-4e6f-afce-b6d89bb6bc2f status updated to completed
+2026-05-29 20:04:33,530 - DAG - INFO - task.completed - execute_encoding: Encoding complete: 4 rendition(s) in encoded_bucket
+2026-05-29 20:04:33,531 - DAG - INFO - dag.completed - pipeline_783b4b5f

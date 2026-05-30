@@ -5,7 +5,7 @@ Evaluates video type and inspection results to generate DAGs
 import uuid
 import logging
 from typing import Dict, List, Callable
-from models import AssetTable, EncodingTask, DAGDefinition
+from models import AssetTable, TaskDefinition, DAGDefinition, TaskStatus
 
 logger = logging.getLogger(__name__)
 
@@ -144,7 +144,7 @@ class RulesEngine:
                     task_id = f"{task_def['name']}_{asset.asset_id[:8]}"
                     task_name_to_id[task_def['name']] = task_id
                     
-                    task = EncodingTask(
+                    task = TaskDefinition(
                         task_id=task_id,
                         dependencies=[],  # Will set in second pass
                         encoding_params=task_def['encoding_params']
@@ -176,7 +176,7 @@ class RulesEngine:
 
     def _create_default_dag(self, asset: AssetTable) -> DAGDefinition:
         """Create default encoding DAG when no rules match"""
-        default_task = EncodingTask(
+        default_task = TaskDefinition(
             task_id=f"default_encode_{asset.asset_id[:8]}",
             dependencies=[],
             encoding_params={
@@ -193,7 +193,7 @@ class RulesEngine:
             dag_id=str(uuid.uuid4()),
             asset_uuid=asset.asset_id,
             tasks=[default_task],
-            status="pending"
+            status=TaskStatus.PENDING
         )
         
         logger.info(f"dag.created - {dag_def.dag_id} (default) for asset {asset.asset_id}")

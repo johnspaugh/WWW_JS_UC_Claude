@@ -431,3 +431,39 @@
 2026-03-27 13:55:41,723 - Encoding_Service - INFO - temp.cleaned - removed working copy: ./temp_bucket\test_user_content.mp4
 2026-03-27 13:55:41,724 - Encoding_Service - INFO - DAG execution complete: de666e34-7bad-4d1c-b8a0-5108e07c546d - 2 outputs
 2026-03-27 13:55:41,729 - Ingest_Service - INFO - Asset aef333fe-2a8b-4aa8-9b19-a659efab522a status updated to completed
+2026-05-29 19:45:44,840 - __main__ - INFO - Initializing Video Transcoding Service
+2026-05-29 19:45:44,843 - Rules_Engine - INFO - Added rule: premium_movie_abr (priority 1)
+2026-05-29 19:45:44,843 - Rules_Engine - INFO - Added rule: user_content_quick (priority 2)
+2026-05-29 19:45:44,843 - Rules_Engine - INFO - Added rule: legacy_codec_upgrade (priority 3)
+2026-05-29 19:45:44,844 - Rules_Engine - INFO - Added rule: tv_episode_standard (priority 4)
+2026-05-29 19:45:44,844 - Rules_Engine - INFO - Added rule: trailer_high_quality (priority 5)
+2026-05-29 19:45:44,844 - Rules_Engine - INFO - Encoding rules setup complete - 5 rules configured
+2026-05-29 19:45:44,844 - Orchestrator - INFO - Orchestrator initialized with all services
+2026-05-29 19:45:44,845 - __main__ - INFO - Found 0 video(s) in asset_bucket: []
+2026-05-29 19:48:41,412 - __main__ - INFO - Initializing Video Transcoding Service
+2026-05-29 19:48:41,413 - Rules_Engine - INFO - Added rule: premium_movie_abr (priority 1)
+2026-05-29 19:48:41,413 - Rules_Engine - INFO - Added rule: user_content_quick (priority 2)
+2026-05-29 19:48:41,413 - Rules_Engine - INFO - Added rule: legacy_codec_upgrade (priority 3)
+2026-05-29 19:48:41,413 - Rules_Engine - INFO - Added rule: tv_episode_standard (priority 4)
+2026-05-29 19:48:41,413 - Rules_Engine - INFO - Added rule: trailer_high_quality (priority 5)
+2026-05-29 19:48:41,414 - Rules_Engine - INFO - Encoding rules setup complete - 5 rules configured
+2026-05-29 19:48:41,414 - Orchestrator - INFO - Orchestrator initialized with all services
+2026-05-29 19:48:41,415 - __main__ - INFO - Found 0 video(s) in asset_bucket: []
+2026-05-29 19:49:24,007 - __main__ - INFO - Initializing Video Transcoding Service
+2026-05-29 19:49:24,008 - Rules_Engine - INFO - Added rule: premium_movie_abr (priority 1)
+2026-05-29 19:49:24,008 - Rules_Engine - INFO - Added rule: user_content_quick (priority 2)
+2026-05-29 19:49:24,008 - Rules_Engine - INFO - Added rule: legacy_codec_upgrade (priority 3)
+2026-05-29 19:49:24,009 - Rules_Engine - INFO - Added rule: tv_episode_standard (priority 4)
+2026-05-29 19:49:24,009 - Rules_Engine - INFO - Added rule: trailer_high_quality (priority 5)
+2026-05-29 19:49:24,009 - Rules_Engine - INFO - Encoding rules setup complete - 5 rules configured
+2026-05-29 19:49:24,009 - Orchestrator - INFO - Orchestrator initialized with all services
+2026-05-29 19:49:24,010 - __main__ - INFO - Found 0 video(s) in asset_bucket: []
+2026-05-29 20:01:09,660 - __main__ - INFO - Initializing Video Transcoding Service
+2026-05-29 20:01:09,661 - Rules_Engine - INFO - Added rule: premium_movie_abr (priority 1)
+2026-05-29 20:01:09,661 - Rules_Engine - INFO - Added rule: user_content_quick (priority 2)
+2026-05-29 20:01:09,661 - Rules_Engine - INFO - Added rule: legacy_codec_upgrade (priority 3)
+2026-05-29 20:01:09,661 - Rules_Engine - INFO - Added rule: tv_episode_standard (priority 4)
+2026-05-29 20:01:09,661 - Rules_Engine - INFO - Added rule: trailer_high_quality (priority 5)
+2026-05-29 20:01:09,661 - Rules_Engine - INFO - Encoding rules setup complete - 5 rules configured
+2026-05-29 20:01:09,662 - Orchestrator - INFO - Orchestrator initialized with all services
+2026-05-29 20:01:09,662 - __main__ - INFO - Found 0 video(s) in asset_bucket: []
